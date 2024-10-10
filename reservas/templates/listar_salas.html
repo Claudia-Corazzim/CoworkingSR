@@ -1,0 +1,8 @@
+<h1>Salas Disponíveis</h1>
+<ul>
+  {% for sala in salas %}
+  <li>
+    {{ sala.nome }} - <a href="{% url 'reservar_sala' sala.id %}">Reservar</a>
+  </li>
+  {% endfor %}
+</ul>

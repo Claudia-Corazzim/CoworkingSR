@@ -1,0 +1,11 @@
+<h1>Faça sua Reserva</h1>
+<form action="{% url 'criar_reserva' %}" method="post">
+  {% csrf_token %}
+  <label for="data">Data e Hora:</label>
+  <input type="datetime-local" name="data" id="data" required />
+
+  <label for="duracao">Duração (horas):</label>
+  <input type="numero" name="duracao" id="duracao" required />
+
+  <button type="submit">Reservar</button>
+</form>

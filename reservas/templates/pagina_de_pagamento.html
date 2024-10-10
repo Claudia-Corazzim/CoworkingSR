@@ -1,0 +1,19 @@
+<h1>Escolha o Método de Pagamento</h1>
+<form action="{% url 'pagamento_boleto' %}" method="post">
+  {% csrf_token %}
+  <label for="quantia">Valor:</label>
+  <input type="number" step="0.01" name="quantia" id="quantia" required />
+  <button type="submit">Gerar Boleto</button>
+</form>
+
+<form action="{% url 'pagamento_pix' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="quantia" value="100" />
+  <button type="submit">Pagamento via Transferência/PIX</button>
+</form>
+
+<form action="{% url 'pagamento_cartao' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="quantia" value="100" />
+  <button type="submit">Pagamento com Cartão de Crédito</button>
+</form>

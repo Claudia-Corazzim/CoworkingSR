@@ -1,0 +1,6 @@
+<h1>Deixe seu Feedback</h1>
+<form action="{% url 'adicionar_feedback' %}" method="post">
+  {% csrf_token %}
+  <textarea name="mensagem" rows="5" cols="40" required></textarea>
+  <button type="submit">Enviar Feedback</button>
+</form>
